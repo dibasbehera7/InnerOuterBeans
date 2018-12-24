@@ -9,7 +9,13 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<bean id="fruit" class="com.dibas.food.Fruit" />
+	<bean id="fruit" class="com.dibas.food.Fruit" 
+		init-method="initMethod" destroy-method="destroyMethod">
+		<property name="description" value="I'm fruit."></property>
+	</bean>
+
+
+<!-- 	<bean id="fruit" class="com.dibas.food.Fruit" />
 	<bean id="dairy" class="com.dibas.food.Dairy" />
 	<bean id="grain" class="com.dibas.food.Grain" />
 	<bean id="meat" class="com.dibas.food.Meat" />
@@ -30,7 +36,7 @@
 				<property name="description" value="I am Apple. I am typically red or green."></property>
 			</bean>
 		</property>	
-	</bean>
+	</bean> -->
 
 	<!-- <bean id="meal" class="com.dibas.food.Meal">
 		<constructor-arg index="0" ref="fruit"/>
